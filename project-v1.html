@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vogue Italia | Samidavinci</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">samidavinci</a>
+        <div class="nav-links">
+            <a href="work.html">Back to Work</a>
+        </div>
+    </nav>
+
+    <header class="project-hero">
+        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&q=80" class="parallax-img" alt="Vogue Italia">
+        <div class="hero-overlay">
+            <h1 class="reveal">Vogue Italia</h1>
+            <p class="reveal">The Summer Collection</p>
+        </div>
+    </header>
+
+    <section class="project-credits reveal">
+        <div class="credit-col">
+            <span>Client</span>
+            <p>Vogue Magazine</p>
+        </div>
+        <div class="credit-col">
+            <span>Services</span>
+            <p>Photography, Art Direction</p>
+        </div>
+        <div class="credit-col">
+            <span>Model</span>
+            <p>Alana B.</p>
+        </div>
+        <div class="credit-col">
+            <span>Year</span>
+            <p>2024</p>
+        </div>
+    </section>
+
+    <section class="project-gallery">
+        <div class="img-block full reveal">
+            <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80" alt="Full Spread">
+        </div>
+
+        <div class="img-block duo reveal">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80" alt="Portrait 1">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80" alt="Portrait 2">
+        </div>
+
+        <div class="img-block portrait-center reveal">
+            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&q=80" alt="Centered Portrait">
+        </div>
+
+        <div class="img-block full reveal">
+            <img src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?auto=format&fit=crop&q=80" alt="Closing Image">
+        </div>
+    </section>
+
+    <section class="next-project">
+        <a href="work.html">
+            <span class="sub-label">Next Project</span>
+            <h2>The Artist Series</h2>
+        </a>
+    </section>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); });
+        });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
