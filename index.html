@@ -691,6 +691,8 @@
             <a href="contact.html">Contact</a>
         </div>
 
+        <button class="theme-toggle" id="theme-toggle">Light Mode</button>
+
         <button class="menu-toggle" id="menu-btn">
             <div class="toggle-track">
                 <span>Menu</span>
@@ -919,6 +921,28 @@
                 body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
             });
         }
+
+        // Light mode toggle for homepage
+        const themeToggle = document.getElementById('theme-toggle');
+        const applyTheme = (mode) => {
+            if (!themeToggle) return;
+            if (mode === 'light') {
+                body.classList.add('light-mode');
+                themeToggle.textContent = 'Dark Mode';
+            } else {
+                body.classList.remove('light-mode');
+                themeToggle.textContent = 'Light Mode';
+            }
+        };
+
+        const savedTheme = localStorage.getItem('samidavinci-theme');
+        if (savedTheme === 'light') applyTheme('light');
+
+        themeToggle?.addEventListener('click', () => {
+            const isLight = body.classList.toggle('light-mode');
+            localStorage.setItem('samidavinci-theme', isLight ? 'light' : 'dark');
+            themeToggle.textContent = isLight ? 'Dark Mode' : 'Light Mode';
+        });
     </script>
 </body>
 </html>

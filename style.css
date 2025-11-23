@@ -50,6 +50,22 @@ nav {
     background-color: var(--accent); transition: width 0.3s ease;
 }
 .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+/* Theme toggle button */
+.theme-toggle {
+    margin-left: 1.5rem;
+    padding: 0.5rem 1.1rem;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.75rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
 .mobile-menu-overlay {
     backdrop-filter: blur(20px);
 }
@@ -111,6 +127,27 @@ nav {
 .photo-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; filter: grayscale(20%); }
 .photo-card:hover img { transform: scale(1.05); filter: grayscale(0%); }
 .filter-hidden { opacity: 0; transform: translateY(20px) scale(0.98); pointer-events: none; }
+.light-mode .photo-card img { filter: grayscale(0%); }
+.light-mode .photo-info { color: #fff; }
+
+/* Light mode overrides */
+body.light-mode {
+    --bg-color: #f7f3ec;
+    --text-primary: #111;
+    --text-secondary: #4a4a4a;
+    background: var(--bg-color);
+    color: var(--text-primary);
+}
+body.light-mode nav { mix-blend-mode: normal; }
+body.light-mode .logo { color: #111; }
+body.light-mode .nav-links a { color: #111; opacity: 0.8; }
+body.light-mode .nav-links a:hover, body.light-mode .nav-links a.active { opacity: 1; }
+body.light-mode .theme-toggle {
+    border-color: rgba(0,0,0,0.15);
+    background: rgba(0,0,0,0.05);
+    color: #111;
+}
+body.light-mode .theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
 .photo-info {
     position: absolute;
     left: 0; right: 0; bottom: 0;
