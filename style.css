@@ -67,12 +67,12 @@ nav {
 /* Theme toggle (floating) */
 #theme-toggle {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    width: 50px;
-    height: 50px;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
-    background: transparent;
+    background: rgba(17,17,17,0.8);
     border: 1px solid var(--border-color);
     color: var(--text-primary);
     cursor: pointer;
@@ -81,10 +81,12 @@ nav {
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    outline: none;
 }
 #theme-toggle:hover {
-    transform: scale(1.1);
+    transform: scale(1.08);
     border-color: var(--accent);
     color: var(--accent);
 }
@@ -92,6 +94,14 @@ nav {
 .icon-moon { display: none; font-size: 1.1rem; }
 [data-theme="light"] .icon-sun { display: none; }
 [data-theme="light"] .icon-moon { display: block; }
+#theme-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+[data-theme="light"] #theme-toggle {
+    background: rgba(255,255,255,0.85);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
 .mobile-menu-overlay {
     backdrop-filter: blur(20px);
 }
